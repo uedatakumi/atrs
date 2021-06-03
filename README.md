@@ -1,0 +1,3 @@
+# atrs
+
+Applicative TRS.
