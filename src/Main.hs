@@ -1,15 +1,7 @@
 import TRS
 import Parser
+import Substitution
 import System.Environment
-
-type Substitution = [(String, Term)]
-
-substitute :: Term -> Substitution -> Term
-substitute (Var x) sigma
-  | Just t <- lookup x sigma = t
-  | otherwise                = Var x
-substitute (Con c) _         = Con c
-substitute (App t u) sigma   = App (substitute t sigma) (substitute u sigma)
 
 match' :: Substitution -> [(Term, Term)] -> Maybe Substitution
 match' sigma []                             = Just sigma
