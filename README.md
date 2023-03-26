@@ -4,7 +4,7 @@ Applicative Term Rewrite System
 
 ```
 cd src
-ghc Main
+make
 ./Main <filename>
 ```
 
